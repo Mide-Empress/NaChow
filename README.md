@@ -27,8 +27,6 @@ NaChow is a fun and interactive food suggestion web app. Explore tasty dishes, w
 
 ---
 
-## 🔗 Live Demo (Optional)
-You can host this project on GitHub Pages for a live preview.
 
 ## 💌 Contact
 Created with ❤️ by Ayomide Shofolahan

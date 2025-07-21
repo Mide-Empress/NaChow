@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fffdf6;
+  color: #333;
+  overflow-y: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #f85a3e;
+  color: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.nav-links .btn {
+  padding: 10px 20px;
+  background: #fff;
+  color: #f85a3e;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+
+.nav-links .btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: tomato;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: tomato;
+}
+
+.hero-text .btn {
+  background-color: #fff;
+  color: #f85a3e;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-text .btn:hover {
+  background-color: #fdd9c5;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f85a3e;
+  color: white;
+  position: relative;
+  bottom: 50px;
+}
+
+#kitchen{
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  filter: blur(2px);
+}
+
+/* ===== MEDIA QUERIES FOR RESPONSIVENESS ===== */
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+  .food-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  #searchInput {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .cart-container {
+    padding: 15px;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .cart-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .food-card img {
+    height: 140px;
+  }
+
+  .food-info h3 {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .food-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-btn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  #searchInput {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .cart-summary {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NaChow 🛒 Your Cart</title>
+  <link rel="stylesheet" href="NaChow 22.css">
+</head>
+<body class="cart-body">
+  <header class="food-header">
+    <h1 class="logo">NaChow 🛒 Cart</h1>
+    <a href="NaChow 2.html" class="back-btn">← Back to Food Library</a>
+  </header>
+       <video muted autoplay loop id="eating">
+      <source src="eating.mp4" type="video/mp4" width="300px">
+    </video>
+  <main class="cart-container">
+    <h2>Your Selected Foods</h2>
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <h3>Total: ₦<span id="cartTotal">0</span></h3>
+    </div>
+  </main>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem("naChowCart")) || {};
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+
+  function renderCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    for (let food in cart) {
+      const item = cart[food];
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <div>
+          <h4>${food}</h4>
+          <p>₦${item.price} × ${item.quantity} = ₦${itemTotal}</p>
+        </div>
+        <button class="remove-btn" data-food="${food}">Remove</button>
+      `;
+      cartItems.appendChild(div);
+    }
+
+    cartTotal.innerText = total.toLocaleString();
+
+    // Remove button logic
+    const removeBtns = document.querySelectorAll(".remove-btn");
+    removeBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const foodToRemove = btn.getAttribute("data-food");
+        delete cart[foodToRemove];
+        localStorage.setItem("naChowCart", JSON.stringify(cart));
+        renderCart();
+      });
+    });
+  }
+
+  renderCart();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - NaChow 🍲</title>
+  <link rel="stylesheet" href="NaChow login.css">
+</head>
+<body class="auth-body">
+   <header class="navbar">
+    <div class="logo">🍽️ NaChow</div>
+    <nav class="nav-links">
+      <a href="NaChow.html">Home</a>
+      <a href="NaChow about.html">About</a>
+      <a href="NaChow Contact.html" class="btn">Contact</a>
+    </nav>
+  </header>
+  <div class="auth-container">
+         <video muted autoplay loop id="onion">
+      <source src="onion.mp4" type="video/mp4" width="300px">
+    </video>
+    <h2>Welcome back to <span class="logo">NaChow 🍲</span></h2>
+    <form id="login" method="get" action="login.php">
+      <input type="email" id="loginEmail" placeholder="📧 Email" required>
+      <input type="password" name="pass" id="loginPassword" placeholder="🔑 Password" required>
+      <button type="submit"><a href="NaChow 2.html" id="continueLink">Chop-Now 🍽</button></a>
+    </form>
+    <p>Don't have an account? <a href="NaChow signup.html">Sign up here</a></p>
+<script src="NaChow data.js"></script>
+<script src="NaChow login.js"></script>
+<script>
+  const loginForm = document.getElementById("loginForm");
+  const errorMsg = document.getElementById("errorMsg");
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    const savedUser = localStorage.getItem("nachowUser");
+    const savedPass = localStorage.getItem("nachowPass");
+
+    if (username === "" || password === "") {
+      errorMsg.textContent = "⚠️ Please login to continue!";
+    } else if (username !== savedUser) {
+      errorMsg.textContent = "❌ Username not found!";
+    } else if (password !== savedPass) {
+      errorMsg.textContent = "❌ The password is incorrect!";
+    } else {
+      window.location.href = "food-library.html";
+    }
+  });
+</script>
+
+  </div>
+</body>
+</html>

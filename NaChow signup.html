@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - NaChow 🍲</title>
+  <link rel="stylesheet" href="NaChow login.css">
+</head>
+<body class="auth-body">
+   <header class="navbar">
+    <div class="logo">🍽️ NaChow</div>
+    <nav class="nav-links">
+      <a href="NaChow.html">Home</a>
+      <a href="NaChow about.html">About</a>
+      <a href="NaChow Contact.html" class="btn">Contact</a>
+    </nav>
+  </header>
+       <video muted autoplay loop id="onion">
+      <source src="onion.mp4" type="video/mp4" width="300px">
+    </video>
+  <div class="auth-container">
+    <h2>Join the <span class="logo">NaChow 🍲</span> Fam</h2>
+    <form id="signupForm">
+      <input type="text" id="signupName" placeholder="🧑 Name" required>
+      <input type="email" id="signupEmail" placeholder="📧 Email" required>
+      <input type="password" id="signupPassword" placeholder="🔒 Password" required>
+      <input type="password" id="signupConfirm" placeholder="🔒 Confirm Password" required>
+      <button type="submit"><a href="NaChow 2.html" id="continueLink">Sign Up & Start Chopping 😋</a></button>
+    </form>
+    <p>Already have an account? <a href="NaChow login.html" >Login here</a></p>
+  </div>
+  <script>
+      document.getElementById('continueLink').addEventListener('click', function(event) {
+
+        let signupName = 
+        document.getElementById('signupName').value.trim();
+
+         let signupEmail = 
+        document.getElementById('signupEmail').value.trim();
+
+         let signupPassword = 
+        document.getElementById('signupPassword').value.trim();
+
+         let signupConfirm = 
+        document.getElementById('signupConfirm').value.trim();
+
+        if (signupName === "" || signupEmail === "" || signupPassword === "" || signupConfirm === "") {
+          event.preventDefault();
+          alert('Please fill in all fields before Submitting');
+        } else {
+          alert('Sign Up Successful');
+        }
+      });
+  </script>
+</body>
+</html>

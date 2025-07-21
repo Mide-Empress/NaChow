@@ -1,0 +1,81 @@
+.back-btn{
+  width: 90x;
+  height: 20px;
+  background: #fff;
+  color: tomato;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin-top:20px;
+  border-radius: 6px;
+}
+
+.food-header {
+  background: tomato;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffaf3;
+  color: #222;
+}
+
+.cart-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cart-items .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.cart-items .cart-item h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.remove-btn {
+  background: red;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+#eating{
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  filter: blur(3px);
+}
